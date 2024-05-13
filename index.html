@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("https://i.imgur.com/5fQUPDl.jpg");
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #000000;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .linkedin-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .linkedin-link a {
+            text-decoration: none;
+            color: #0077b5;
+            font-weight: bold;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            margin: 5px;
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: #0077b5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #page-2 img,
+        #page-4 img,
+        #page-3 img,
+        #page-5 img {
+            max-width: 100%;
+            max-height: 100vh;
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .page-animation {
+            animation-duration: 0.5s;
+            animation-timing-function: ease;
+            animation-fill-mode: both;
+        }
+
+        .slideInFromRight {
+            animation-name: slideInFromRight;
+        }
+
+        .slideInFromLeft {
+            animation-name: slideInFromLeft;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://media.licdn.com/dms/image/D4D03AQHBgbfK_1rXPQ/profile-displayphoto-shrink_400_400/0/1715518001098?e=1721260800&v=beta&t=jnNeaPSNt5pyAlfJxTONJkOnVTOffrZnqfLy8fntkqE" alt="Profil Resmi" id="profile-image">
+            <h1 id="info">Eyüp Furkan Sezer</h1>
+            <p id="contact">İletişim Bilgileri</p>
+            <p id="address">Adres: Ankara, Türkiye</p>
+            <p id="phone">Telefon: 0505 494 03 05</p>
+            <p id="email">E-posta: efurkansezer06@gmail.com</p>
+        </header>
+        <section class="active page-animation" id="page-1">
+            <h2>Eğitimlerim</h2>
+            <p id="education">Lisans</p>
+            <p>Ankara Medipol Üniversitesi(2021-2025) <br>
+             <p>-Yönetim Bilişim Sistemleri Uzmanlığı-</p><br>
+            İzmir Aliağa Anadolu Lisesi (2016-2020)</p>
+           
+             <h2>Çalışma yerleri</h2>
+             <p>Ceo / FMC SAVUNMA / (2024-20XX) </p>
+            <p id="working">Bakım onarım test uzmanı/Honda Efe plaza / (2023- 2024)</p>
+            <p>Kurye / Domino's Pizza / (2022-2023) </p>
+            <p>Oyuncu / EC Medya / (2021-2022) </p>
+            <p>Mağaza Müdürü / Koza Optik / (2020-2021) </p>
+            
+             <h2>Hobilerim</h2>
+            <p id="hobbyes">Savunma sanayi çalışmaları hazırlamak</p>
+            <p>Rap Müziği Yapmak <br>
+             <p>Video tasarımı</p>
+             <p>Görsel grafikler çizmek</p><br>
+            <textarea id="comment-1" rows="4" cols="50" placeholder="Yorumunuzu buraya yazınız..."></textarea>
+            <br>
+            <button onclick="submitComment(1)">Yorum Yap</button>
+        </section>
+        <section id="page-2" class="page-animation">
+            <h2>SARP Otonom silah sistemi</h2>
+            <img src="https://assets.newatlas.com/dims4/default/ebf8686/2147483647/strip/true/crop/5184x3456+0+0/resize/2880x1920!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Farchive%2Fkorea-dodamm-super-aegis-autonomos-robot-gun-turret.JPG" alt="Profil Resmi" id="profile-image">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/OXj6j1jL5DA" frameborder="0" allowfullscreen></iframe>
+            <p>SARP Turret sistemi kendi içerisindeki ısı ve titreşim sensörleri sayesinde haraket eden her haraketi inceler ve yapay zeka desteği sayesinde düşmanları ve tehdit seviyelerini tespit edip ona göre kullanıcı gerektirmeden hedefi 10 kilometre menzili içerisinde tam 12^den vurabilir Aynı zamanda kullanıcı desteğine açık olan SARP ihtiyaç halinde kullanıcı tarafından kontrol edilebilirken kontrolden çıkma gibi yada dost hedeflere ateş açma riskinin olabilceği bölgelerde atış öncesi onay istiyebilir...</p>
+            <textarea id="comment-2" rows="4" cols="50" placeholder="Yorumunuzu buraya yazınız..."></textarea>
+            <br>
+            <button onclick="submitComment(2)">Yorum Yap</button>
+        </section>
+        <section id="page-3" class="page-animation">
+            <h2>SARP İlk Hedef testimiz</h2>
+            <img src="https://www.turkishdefencenews.com/wp-content/uploads/2020/10/ASELSAN-MUHAFIZ.jpg">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/QiM1IlJRsdQ" frameborder="0" allowfullscreen></iframe>
+            <p>Tasarlamış olduğumuz SARP Turret bu bağlamda bize çok şey öğretti kendi evladımız gibi geliştirdiğimiz bu silah ilk defa Bakanlıktan onay aldı ve Sahil Güvenliğine monte edildi ve Marmara denizinde yapılan testlerde denizde dahil hedefi sarsıntılarda nokta atışı vurabilceğini ispatlamıştır [Yıl 2023,Aralık]</p>
+            <textarea id="comment-3" rows="4" cols="50" placeholder="Yorumunuzu buraya yazınız..."></textarea>
+            <br>
+            <button onclick="submitComment(3)">Yorum Yap</button>
+        </section>
+        <section id="page-4" class="page-animation">
+            <h2>Proje tanıtım yarışması sürecim ve nasıl birinci olduğumuz.</h2>
+            <img src="https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2158000/bilgi-yarismasi-2159981.jpg">
+            <p>Hayatımdaki ilk kendimi gösterme şansını Hakkari / Çukurca'da Şehit Bilal Soybilgiç Okulunda yapılan Proje sunum yarışmasında yakaladım. Yarışmanın en önemli aşaması olan bir proje üret ve tanıt adlı aşamada hayalim olan bir Otonom insansız otomatik atış yapabilen bir silah kulesiydi bu tanıtımı yaparken beni dinleyen Valimiz ,Askeri yetkililerimiz projeyi çok beğenmiş sonrasında benle iletişime geçmişlerdir ama o yıllarda projeyi hayata dökücek bir bilgim olmadığı için bana kaynaklar önermişler ve kendileri bu projeyi ilerletip ilerletemiceğini sormuşlardır ben ve ekip arkadaşlarım projenin tüm detaylarını ve hayalimizdeki avantajları ve tahmini dezavantajları yetkililelere ileterek il geneli yarışmada birinci seçilmiştik. Bu bağlamda bize o zamanlar ünlü olan CANON tipi profesyonel fotoğraf makinesi hediye edilmiştir.(YIL 2015)</p>
+            <textarea id="comment-4" rows="4" cols="50" placeholder="Yorumunuzu buraya yazınız..."></textarea>
+            <br>
+            <button onclick="submitComment(4)">Yorum Yap</button>
+        </section>
+        <section id="page-5" class="page-animation">
+            <h2>İlk Satış Deneyimimiz</h2>
+            <img src="https://defenceturk.s3.eu-central-1.amazonaws.com/2021/02/Sarp-silah-sistemi-3000.-uretim.jpg">
+            <p>Son Testleri Yapılan Ulak SARP Savaş Sistemi, Aselsanın finansı ve garantörlüğü altında oluşan ortaklık ile TSK envanterine 2.000 adet satılarak ilk yüksek satışımızı sağlamış olduk bunlar arasında bu kule sistemlerinin KOBRA 2 tipi zırhlı aracına montajı , Güvenlik kulelerine montajı , Sahil Güvenlik önleme botlarının ön gövdelerine montajı tarafımızca uyumlu versiyonları ile sağlandı ilerleyen süreçte 1.403 adet daha deniz kuvvetlerimize satış yaparak toplamda 3.403 adet SARP sistemi sattık</p>
+            <textarea id="comment-5" rows="4" cols="50" placeholder="Yorumunuzu buraya yazınız..."></textarea>
+            <br>
+            <button onclick="submitComment(5)">Yorum Yap</button>
+        </section>
+        <section id="page-6" class="page-animation">
+            <h2>İlk Savunma Sanayi Şirket Deneyimim</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfcyYQwrpDLc2rmWwnH2XqXzWOWPNUYcIKu9kr7wuSlw&s" alt="İlk Şirket Deneyimi">
+            <p>Üretmiş olduğumuz ilk ürün olan SARP sistemini satmak ve tanıtmak için bir şirkete ihtiyacımız vardır bunun hususunda patent alımları ve marka sahibi olmak için FMC SAVUNMA şirketini kurdum bu şirketin amacı Türk Savunma sanayine yeni soluklar getirmekti sonrasında bir çok ortaklar edindik bu ortaklardan en önemlileri Aselsan/ Havelsan/ FNSS gibi şirketlerdir</p>
+            <textarea id="comment-6" rows="4" cols="50" placeholder="Yorumunuzu buraya yazınız..."></textarea>
+            <br>
+            <button onclick="submitComment(6)">Yorum Yap</button>
+        </section>
+        <footer class="linkedin-link">
+            <a href="https://www.linkedin.com/in/e-furkan-sezer-0a80a8220/" target="_blank"> /LinkedIn/</a>
+            <a href="https://www.youtube.com/@AselsanTV" target="_blank"> Youtube / </a>
+            <a href="https://www.instagram.com/ejder_line/" target="_blank"> İnstagram / </a>
+        </footer>
+
+        <div class="buttons">
+            <button onclick="showPage(1)">Eğitimlerim</button>
+            <button onclick="showPage(4)">Proje tanıtım Yarışmam</button>
+            <button onclick="showPage(6)">İlk Savunma Sanayi Şirket Deneyimim</button>
+            <button onclick="showPage(2)">SARP Otonom silah sistemi</button>
+            <button onclick="showPage(3)">SARP İlk Hedef testimiz</button>
+            <button onclick="showPage(5)">İlk Satış Deneyimimiz</button>
+            <button id="languageButton" onclick="changeLanguage()">Dil Değiştir</button>
+        </div>
+
+        <form id="feedbackForm" onsubmit="submitForm(event)" style="display: none;">
+            <textarea id="feedback" rows="4" cols="50" placeholder="Geri bildiriminizi buraya yazınız..."></textarea>
+            <br>
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+    <script>
+        var currentPage = 1;
+        var isFullScreen = false;
+        var language = "tr";
+
+        function showPage(pageNumber) {
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+                if (pageNumber > currentPage) {
+                    section.classList.remove('slideInFromLeft');
+                    section.classList.add('slideInFromRight');
+                } else if (pageNumber < currentPage) {
+                    section.classList.remove('slideInFromRight');
+                    section.classList.add('slideInFromLeft');
+                }
+            });
+            var currentPageSection = document.getElementById('page-' + pageNumber);
+            currentPageSection.classList.add('active');
+            currentPage = pageNumber;
+        }
+
+        document.getElementById("profile-image").addEventListener("click", function() {
+            currentPage = (currentPage % 6) + 1;
+            showPage(currentPage);
+        });
+
+        function submitForm(event) {
+            event.preventDefault();
+            var feedback = document.getElementById("feedback").value;
+            // Burada geri bildirimi işleyebilirsiniz
+            alert("Geri bildiriminiz alındı: " + feedback);
+        }
+
+        function handleImageClick() {
+            var image = document.getElementById("image");
+            if (!isFullScreen) {
+                image.style.width = "100vw";
+                image.style.height = "100vh";
+                image.style.position = "fixed";
+                image.style.top = "0";
+                image.style.left = "0";
+                image.style.zIndex = "9999";
+                isFullScreen = true;
+            } else {
+                image.style.width = "";
+                image.style.height = "";
+                image.style.position = "";
+                image.style.top = "";
+                image.style.left = "";
+                image.style.zIndex = "";
+                isFullScreen = false;
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === '1') {
+                showPage(1);
+            } else if (event.key === '2') {
+                showPage(2);
+            } else if (event.key === '3') {
+                showPage(3);
+            } else if (event.key === '4') {
+                showPage(4);
+            } else if (event.key === '5') {
+                showPage(5);
+            } else if (event.key === '6') {
+                showPage(6);
+            }
+        });
+
+        function changeLanguage() {
+            if (language === "tr") {
+                document.documentElement.lang = "en";
+                translateToEnglish();
+                language = "en";
+            } else {
+                document.documentElement.lang = "tr";
+                translateToTurkish();
+                language = "tr";
+            }
+        }
+
+        function translateToEnglish() {
+            document.getElementById("contact").textContent = "Contact Information";
+            document.getElementById("address").textContent = "Address: Ankara, Turkey";
+            document.getElementById("phone").textContent = "Phone: 0505 494 03 05";
+            document.getElementById("email").textContent = "E-mail: efurkansezer06@gmail.com";
+
+            document.getElementById("education").textContent = "Education";
+            document.getElementById("working").textContent = "Workplaces";
+            document.getElementById("hobbyes").textContent = "Hobbies";
+        }
+
+        function translateToTurkish() {
+            document.getElementById("contact").textContent = "İletişim Bilgileri";
+            document.getElementById("address").textContent = "Adres: Ankara, Türkiye";
+            document.getElementById("phone").textContent = "Telefon: 0505 494 03 05";
+            document.getElementById("email").textContent = "E-posta: efurkansezer06@gmail.com";
+
+            document.getElementById("education").textContent = "Eğitimlerim";
+            document.getElementById("working").textContent = "Çalışma yerleri";
+            document.getElementById("hobbyes").textContent = "Hobilerim";
+        }
+
+        function submitComment(pageNumber) {
+            var comment = document.getElementById("comment-" + pageNumber).value;
+            // Yorum işlemleri burada yapılabilir
+            alert("Yorumunuz alındı: " + comment);
+        }
+    </script>
+</body>
+</html>
