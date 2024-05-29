@@ -239,19 +239,32 @@
 
         let currentPage = 1;
 
-        const apiKey = 'YDM2VW4OLGQGJVG0';  // apı anahtarımızı buraya ekliyoruz
-        const symbol = 'FMC';  // 
-        const url = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${symbol}&interval=5min&apikey=${YDM2VW4OLGQGJVG0}`;
+        class AlphaVantage {
+            constructor(apiKey) {
+                this.apiKey = apiKey;
+                this.baseUrl = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=5min&apikey=YDM2VW4OLGQGJVG0";
+            }
 
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                const stockDataElement = document.getElementById('stock-data');
-                const timeSeries = data['Time Series (5min)'];
-                const latestTime = Object.keys(timeSeries)[0];
-                const latestData = timeSeries[latestTime];
+            async fetchStockData(symbol) {
+                const url = `${this.baseUrl}function=TIME_SERIES_INTRADAY&symbol=${symbol}&interval=5min&apikey=${this.apiKey}`;
+                try {
+                    const response = await fetch(url);
+                    const data = await response.json();
+                    return data;
+                } catch (error) {
+                    console.error("Error fetching stock data:", error);
+                    return null;
+                }
+            }
 
-                stockDataElement.innerHTML = `
+            async displayStockData(symbol) {
+                const data = await this.fetchStockData(symbol);
+                const stockInfo = document.getElementById("stock-info");
+                if (data && data["Time Series (5min)"]) {
+                    const timeSeries = data["Time Series (5min)"];
+                    const latestTime = Object.keys(timeSeries)[0];
+                    const latestData = timeSeries[latestTime];
+                    stockDataElement.innerHTML = `
                     <p><strong><span class="stock-symbol"></span> Sırket adı:</strong> ${data['Meta Data']['2. Symbol']}</p>
                     <p><strong><span class="stock-symbol"></span> Tarih:</strong> ${latestTime}</p>
                     <p><strong><span class="stock-symbol"></span> Fiyat:</strong> ${latestData['1. open']}</p>
@@ -260,16 +273,11 @@
                     <p><strong><span class="stock-symbol"></span> Kapanış:</strong> ${latestData['4. close']}</p>
                     <p><strong><span class="stock-symbol"></span> Hacim:</strong> ${latestData['5. volume']}</p>
                 `;
-            })
-            .catch(error => {
-                const stockDataElement = document.getElementById('stock-data');
-                stockDataElement.innerHTML = '<p>Hisse senedi verileri yüklenemedi.</p>';
-                console.error('Hata:', error);
-            });
 
-        document.getElementById('profile-image').onclick = function() {
-            window.location.href = 'https://www.linkedin.com/in/ey%C3%BCp-furkan-sezer-8594b2274/';
-        };
+                }
+            }
+        }
+
         const alphaVantage = new AlphaVantage("YDM2VW4OLGQGJVG0");
         alphaVantage.displayStockData("FMC");
     </script>
