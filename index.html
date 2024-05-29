@@ -182,7 +182,7 @@
         <section id="page-4" class="page-animation">
             <h2>Proje tanıtım yarışması sürecim ve nasıl birinci olduğumuz.</h2>
             <img src="https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2158000/bilgi-yarismasi-2159981.jpg">
-            <p>Hayatımdaki ilk kendimi gösterme şansını Hakkari / Çukurca'da Şehit Bilal Soybilgiç Okulunda yapılan Proje sunum yarışmasında yakaladım. Yarışmanın en önemli aşaması olan bir proje üret ve tanıt adlı aşamada hayalim olan bir savunma sanayi silahı çizimimle katıldım ve benden beklen... ve benden beklenmeyen bir başarı elde edip okulum birinci oldu... (YIL 2020)</p>
+            <p>Hayatımdaki ilk kendimi gösterme şansını Hakkari / Çukurca'da Şehit Bilal Soybilgiç Okulunda yapılan Proje sunum yarışmasında yakaladım. Yarışmanın en önemli aşaması olan bir proje üret ve tanıt adlı aşamada hayalim olan bir savunma sanayi silahı çizimimle katıldım ve benden beklenmeyen bir başarı elde edip okulum birinci oldu... (YIL 2020)</p>
             <textarea id="comment-4" rows="4" cols="50" placeholder="Yarışma hakkındaki yorumlarınız..."></textarea>
             <br>
             <button onclick="submitComment(4)">Yorum Yap</button>
@@ -238,7 +238,7 @@
 
         function fetchStockData(symbol) {
             const apiKey = 'YDM2VW4OLGQGJVG0';  // API anahtarı
-            const url = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=5min&apikey=YDM2VW4OLGQGJVG0`;
+            const url = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${symbol}&interval=5min&apikey=${apiKey}`;
 
             fetch(url)
                 .then(response => response.json())
